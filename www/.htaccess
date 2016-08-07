@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond $1 !^(index\.php|resources|robots\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+<IfModule mod_headers.c>
+   	SetEnvIf Origin "http(s)?://(www\.)?(test.local|databrickroad.local|dennisblaze.databrickroad.com|databrickroadgroup.local|beezo.net|dennisblaze.com|customjerseyworld.com|beezo.databrickroad.com|cjw.databrickroad.com)$" AccessControlAllowOrigin=$0$1
+   	Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+</IfModule>
