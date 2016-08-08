@@ -361,7 +361,8 @@ $config['domain_list'] = array(
 	'beezo.net',
 	'www.beezo.net',
 	'dennisblaze.com',
-	'customjerseyworld.com'
+	'customjerseyworld.com',
+	'dev.databrickroad.com'
 );
 
 /* End of file config.php */
