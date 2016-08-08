@@ -42,8 +42,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = '127.0.0.1';
-$db['default']['username'] = 'datanbya_dbrapp';
-$db['default']['password'] = 'TJ@G2-TzvgR7';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'datanbya_dbr';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
