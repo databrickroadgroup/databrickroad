@@ -5,6 +5,13 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L,QSA]
 
 <IfModule mod_headers.c>
-   	SetEnvIf Origin "http(s)?://(www\.)?(test.local|databrickroad.local|dennisblaze.databrickroad.com|databrickroadgroup.local|dennisblaze.com|dev.databrickroad.com)$" AccessControlAllowOrigin=$0$1
-   	Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+  Header add Access-Control-Allow-Origin: "*"
 </IfModule>
+
+RewriteCond %{HTTP_HOST} ^dev\.databrickroad\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.dev\.databrickroad\.com$
+RewriteRule ^/?$ "http\:\/\/dev\.databrickroad\.com\/live" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^databrickroad\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.databrickroad\.com$
+RewriteRule ^/?$ "http\:\/\/databrickroad\.com\/live" [R=301,L]

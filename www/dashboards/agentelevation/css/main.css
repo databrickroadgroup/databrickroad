@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	font-family:arial;
+	color:#666;
+}
+h1 {
+	font-size:18px;
+	color:#333;
+}
+h3 {
+	font-size:16px;
+	color:#666;
+	font-weight:bold;
+}
+.center {
+	text-align:center;
+}
+.desc {
+	font-size:12px;
+	color:#999;
+	margin-top:-10px;
+}
+#top-main {
+	width: 100%;
+}
+.dbr-clear {
+	clear:both;
+}
+#col-block-50-left {
+	width:48%;
+	margin-right:25px;
+	float:left;
+}
+#col-block-50-right {
+	width:48%;
+	float:right;
+}
