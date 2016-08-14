@@ -58,9 +58,6 @@ class Pageload extends REST_Controller
 
 	public function most_visited_get() {
 
-var_dump($this->get());
-exit;
-
 		$limit = ($this->get('limit')) ? $this->get('limit') : 100;
 		$from = ($this->get('from')) ? $this->get('from') : null;
 		$to = ($this->get('to')) ? $this->get('to') : null;
