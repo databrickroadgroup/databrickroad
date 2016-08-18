@@ -358,10 +358,6 @@ $config['proxy_ips'] = '';
 $config['domain_list'] = array(
 	'test.local',
 	'databrickroad.local',
-	'beezo.net',
-	'www.beezo.net',
-	'dennisblaze.com',
-	'customjerseyworld.com',
 	'dev.databrickroad.com'
 );
 
