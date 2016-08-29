@@ -8,6 +8,10 @@ RewriteRule ^(.*)$ index.php/$1 [L,QSA]
   Header set Access-Control-Allow-Origin: "*"
 </IfModule>
 
+<IfModule mod_suphp.c>
+  suPHP_ConfigPath /home/datanbya/public_html
+</IfModule>
+
 RewriteCond %{HTTP_HOST} ^dev\.databrickroad\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.dev\.databrickroad\.com$
 RewriteRule ^/?$ "http\:\/\/dev\.databrickroad\.com\/live" [R=301,L]
