@@ -1,0 +1,1 @@
+document.write('<script type="text/javascript" src="http://databrickroad.local/min/?f=js/dbr.js"></script>');function callback(databrickroaduser, result) {console.log('dbruser: ' + databrickroaduser + ' | ' + result);}
