@@ -18,4 +18,4 @@ RewriteRule ^/?$ "http\:\/\/dev\.databrickroad\.com\/live" [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^databrickroad\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.databrickroad\.com$
-RewriteRule ^/?$ "http\:\/\/databrickroad\.com\/live" [R=301,L]
+RewriteRule ^/?$ "https\:\/\/databrickroad\.com\/live" [R=301,L]
