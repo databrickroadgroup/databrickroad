@@ -22,7 +22,7 @@
   window.addEventListener('scroll', function (e) {
 
     var scrollAmount = window.innerHeight + window.scrollY;
-    var documentHeight = $(document).height();
+    var documentHeight = (document.height !== undefined) ? document.height : document.body.offsetHeight;;
     var scrollPercent = (scrollAmount / documentHeight) * 100;
 
     if ((!firstQuarterMet) && (scrollPercent > 25)) {
