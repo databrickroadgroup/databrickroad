@@ -107,6 +107,71 @@ class Pageload_model extends CI_Model
 		return $insertID;
 	}
 
+	public function getMostRecentConversions($domain, $limit=10) {
+		$table = $this->_table;
+
+		$query = $this->db->query("
+		select created, user_guid, domain, page_name
+			from $table
+			where domain = '$domain'
+			and page_name <> '/'
+			and user_guid in (select user_guid from $table where domain = '$domain' group by user_guid having count(*) > 2)
+			order by created desc
+			limit $limit
+		");
+
+		// echo $this->db->last_query();
+		// exit;
+
+		$result = array();
+
+		foreach ($query->result() as $row) {
+			$result[] = array(
+				$row->created,
+				$row->user_guid,
+				$row->domain,
+				$row->page_name
+			);
+		}
+
+		return $result;
+	}
+
+	public function getTopPageLoadsByDomainByName($domain, $page_name, $fromdate=null, $todate=null, $limit=10) {
+		$table = $this->_table;
+		$dateclause = "";
+
+		if ($fromdate) {
+			$dateclause .= "and created > '$fromdate'";
+		}
+
+		if ($todate) {
+			$dateclause .= " and created < '$todate'";
+		}
+
+		$query = $this->db->query("
+		select page_name, count(*) as page_name_count
+			from $table
+			where domain = '$domain'
+			and page_name like '%$page_name%'
+			$dateclause
+			group by page_name
+			order by page_name_count desc
+			limit $limit
+		");
+
+		// echo $this->db->last_query();
+		// exit;
+
+		$result = array();
+
+		foreach ($query->result() as $row) {
+			$result[] = array($row->page_name, $row->page_name_count);
+		}
+
+		return $result;
+	}
+
 	public function getTopPageLoadsByDomain($domain, $fromdate=null, $todate=null, $limit=10) {
 		$table = $this->_table;
 		$dateclause = "";

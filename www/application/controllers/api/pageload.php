@@ -56,6 +56,22 @@ class Pageload extends REST_Controller
 		$this->response($pageloads, 200);
 	}
 
+	public function most_recent_conversions_get() {
+
+		$limit = ($this->get('limit')) ? $this->get('limit') : 100;
+
+		if(!$this->get('domain')) {
+					$this->response(array("failed"=>"Need domain name"), 400);
+				} else {
+			$domain = $this->get('domain');
+		}
+
+		$this->load->model('Pageload_model');
+		$mostRecent = $this->Pageload_model->getMostRecentConversions($domain, $limit);
+
+		$this->response($mostRecent, 200);
+	}
+
 	public function most_visited_get() {
 
 		$limit = ($this->get('limit')) ? $this->get('limit') : 100;
@@ -70,6 +86,25 @@ class Pageload extends REST_Controller
 
 		$this->load->model('Pageload_model');
 		$mostvisited = $this->Pageload_model->getTopPageLoadsByDomain($domain, $from, $to, $limit);
+
+		echo json_encode($mostvisited, JSON_NUMERIC_CHECK);
+	}
+
+	public function most_visited_pages_get() {
+
+		$limit = ($this->get('limit')) ? $this->get('limit') : 100;
+		$from = ($this->get('from')) ? $this->get('from') : null;
+		$to = ($this->get('to')) ? $this->get('to') : null;
+		$page_name = ($this->get('page_name')) ? $this->get('page_name') : null;
+
+		if(!$this->get('domain')) {
+					$this->response(array("failed"=>"Need domain name"), 400);
+				} else {
+			$domain = $this->get('domain');
+		}
+
+		$this->load->model('Pageload_model');
+		$mostvisited = $this->Pageload_model->getTopPageLoadsByDomainByName($domain, $page_name, $from, $to, $limit);
 
 		echo json_encode($mostvisited, JSON_NUMERIC_CHECK);
 	}
