@@ -1,1 +1,1 @@
-document.write('<script type="text/javascript" src="http://databrickroad.local/min/?f=mbas/dbrn.js"></script>');function callback(databrickroaduser, result) {console.log('dbruser: ' + databrickroaduser + ' | ' + result);}
+document.write('<script type="text/javascript" src="http://databrickroad.local/min/?f=mbas/dbrn.js" defer></script>');function callback(databrickroaduser, result) {console.log('dbruser: ' + databrickroaduser + ' | ' + result);}

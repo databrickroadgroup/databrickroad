@@ -133,6 +133,10 @@ class Pageload extends REST_Controller
 		}
 	}
 
+	public function user_options() {
+					return $this->response(NULL, 200);
+	}
+
 	private function postUserBehavior($postData) {
 		// check if the guid already exists in the db
 		$this->load->library('BuildSQLData');
