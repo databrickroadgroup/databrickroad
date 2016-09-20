@@ -4,7 +4,7 @@ require_once('domain.php');
 
 $page_name = isset($_REQUEST['page_name']) ? $_REQUEST['page_name'] : "";
 
-$mostVisitedEndPoint = "http://$domain/api/pageload/most_visited_pages/domain/$site/page_name/$page_name";
+$mostVisitedEndPoint = "$domain/api/pageload/most_visited_pages/domain/$site/page_name/$page_name";
 
 $yesterday = isset($_REQUEST['yesterday']) ? $_REQUEST['yesterday'] : "";
 $today = isset($_REQUEST['today']) ? $_REQUEST['today'] : "";

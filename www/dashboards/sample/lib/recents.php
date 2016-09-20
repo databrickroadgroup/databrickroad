@@ -2,7 +2,7 @@
 
 require_once('domain.php');
 
-$mostVisitedEndPoint = "http://$domain/api/pageload/most_recent_conversions/domain/$site";
+$mostVisitedEndPoint = "$domain/api/pageload/most_recent_conversions/domain/$site";
 $limit = isset($_REQUEST['limit']) ? $_REQUEST['limit'] : "100";
 
 // add limit
