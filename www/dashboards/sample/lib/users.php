@@ -2,7 +2,7 @@
 
 require_once('domain.php');
 
-$userEndPoint = "http://$domain/api/pageload/user_table/dbrid/";
+$userEndPoint = "$domain/api/pageload/user_table/dbrid/";
 $user = isset($_REQUEST['user']) ? $_REQUEST['user'] : "";
 
 if($user != ""){
@@ -14,7 +14,7 @@ if($user != ""){
 	} catch (Exception $ex) {
 	    error_log($ex->getMessage);
 	    echo "<br>ERROR: " . $ex;
-	}	
+	}
 }
 
 echo $result;
