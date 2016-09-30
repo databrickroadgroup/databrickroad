@@ -1,20 +1,22 @@
 <?php
 
-$postData = array(
-	'created' => date('Y-m-d H:i:s'),
-	'domain' => 'test.local',
-	'user_guid' => 'testguid',
-	'page_name' => '/testing.html',
-	'page_url' => 'http://testing/testing.html',
-	'referrer'=> 'schmoogle.com'
-);
+phpinfo();
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://databrickroad.local/api/pageload/user/");
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-$result = curl_exec($ch);
-print_r($result);
-curl_close($ch);
+// $postData = array(
+// 	'created' => date('Y-m-d H:i:s'),
+// 	'domain' => 'test.local',
+// 	'user_guid' => 'testguid',
+// 	'page_name' => '/testing.html',
+// 	'page_url' => 'http://testing/testing.html',
+// 	'referrer'=> 'schmoogle.com'
+// );
+//
+// $ch = curl_init();
+// curl_setopt($ch, CURLOPT_URL, "http://databrickroad.local/api/pageload/user/");
+// curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+// $result = curl_exec($ch);
+// print_r($result);
+// curl_close($ch);
 
 // $postData = array(
 // 	'created' => date('Y-m-d H:i:s'),
