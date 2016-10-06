@@ -13,7 +13,7 @@ $postData = array(
 
 try {
 	$ch = curl_init();
-	curl_setopt($ch, CURLOPT_URL, "http://$domain/api/pageload/user_by_pagename/");
+	curl_setopt($ch, CURLOPT_URL, "$domain/api/pageload/user_by_pagename/");
 	curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$result = curl_exec($ch);
