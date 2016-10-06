@@ -2,7 +2,7 @@
 
 require_once('domain.php');
 
-$mostVisitedEndPoint = "http://$domain/api/pageload/most_visited/domain/$site";
+$mostVisitedEndPoint = "$domain/api/pageload/most_visited/domain/$site";
 
 $yesterday = isset($_REQUEST['yesterday']) ? $_REQUEST['yesterday'] : "";
 $today = isset($_REQUEST['today']) ? $_REQUEST['today'] : "";
