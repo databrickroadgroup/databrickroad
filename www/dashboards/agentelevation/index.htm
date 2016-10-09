@@ -181,7 +181,7 @@
 				var yesterday = yyyy + '-' + mm + '-' + yesterdayDD;
 
 				// get yesterday's most visited
-				$.getJSON('lib/data.php?yesterday='+yesterday+'&today='+yesterday+'&limit=5', function (data) {
+				$.getJSON('lib/data.php?yesterday='+yesterday+'&today='+today+'&limit=5', function (data) {
 
 				    $('#container-yesterday').highcharts({
 				        chart: {
